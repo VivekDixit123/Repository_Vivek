@@ -1,0 +1,135 @@
+Instructions:
+Candidate should write the code in JAVA.
+At the end, please upload it on the public Git-Hub repository and share the link with us.
+Create a maven project and keep every solution in different classes. 
+Code for Question1, Question4 should be created using TesNg @Test annotation.
+
+
+Question 1.
+Definition of consecutive elements 1,2,3,4 or r,s,t,u
+You have an array of characters which is unsorted. Task is to find and print the array and the length of longest array with consecutive
+elements sequence.
+
+For example, 
+INPUT --> [a, 100, b, c, 4, d, 200, 1, e, 3, 2, r, y, z]
+OUTPUT --> Array is: [a, b, c, d, e] and its length is 5.
+
+Answer1: Currently not able to solve the Problem
+
+
+
+Question 2:
+Give a table with Name and Marks in a subject
+|Name|Marks|
+|Amit|45|
+|John|68|.....
+
+
+Write SQL query to find name and marks of 4th highest marks and nth highest marks with rank and other methods
+
+Answer 2:
+
+4th highest marks:
+select name,marks from (
+select e.*, rank() over (order by marks desc) as rank from Student e
+) where rank = 4;
+
+nth highest marks:
+select name,marks from (
+select e.*, rank() over (order by marks desc) as rank from Student e
+) where rank = &n;
+
+Where nth = nth row highest marks...
+
+
+
+Question 3:
+class A{
+  public doSomeThing(){
+    System.out.println("doSomthing in A");
+  }
+}
+
+class B extends A{
+  public doSomeThing(){
+    System.out.println("doSomething in B");
+  }
+}
+
+class C{
+  public static void main()
+  {
+    A a = new B();
+    a.doSomeThing();
+  }
+}
+
+what will be output?
+
+Answer 3:
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+	The method doSomeThing() is undefined for the type A
+
+	at Test.C.main(C.java:8)
+
+
+
+Question 4:
+Convert array of string in any Collection of Strings which is sorted alphabetically without duplicae elements in java.
+Input --> [ "banana", "apple", "orange", "banana"]
+
+Output --> ["apple", "banana", "orange"]
+
+
+Answer 4:
+==========================================
+package Test.cellpointTest;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.LinkedHashSet;
+
+import org.testng.annotations.Test;
+
+
+
+  @Test
+  
+  public class AppTestTest {    
+    public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String[] Inputwords = {"banana", "apple", "orange", "banana"};
+		  
+		Collection<String> wdSet = new LinkedHashSet<String>(Arrays.asList(Inputwords));		  	      
+	    System.out.println("List after short"+wdSet);      
+
+    
+    
+  }
+}
+
+==========================================
+
+
+
+===========================
+package Test;
+
+import java.awt.Window.Type;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.LinkedHashSet;
+import java.util.List;
+
+public class Q41 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String[] Inputwords = {"banana", "apple", "orange", "banana"};
+		  
+		Collection<String> wdSet = new LinkedHashSet<String>(Arrays.asList(Inputwords));		  	      
+	    System.out.println("List after short"+wdSet);      
+	}
+	
+}
+=====================
